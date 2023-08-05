@@ -30,7 +30,7 @@ export const EasyCollapse = (props: TEasyCollapseProps) => {
       <div className="easy-collapse-content">
         <div className="easy-collapse-text">{content}</div>
         <label htmlFor={uuid} className="easy-collapse-btn">
-          down
+          <span></span>
         </label>
       </div>
     </div>

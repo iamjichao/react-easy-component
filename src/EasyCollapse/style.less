@@ -21,8 +21,9 @@
   .easy-collapse-btn {
     width           : @placeholderWidth;
     height          : 24px;
-    line-height     : 26px;
-    text-align      : center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, .1);
     border-radius   : 6px 6px 0 0;
     font-size       : 20px;
@@ -38,6 +39,13 @@
 
     &:hover {
       color: #1677ff;
+    }
+
+    >span {
+      display: inline-block;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid rgba(0, 0, 0, .5);
     }
   }
 
