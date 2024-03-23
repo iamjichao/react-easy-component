@@ -1,71 +1,27 @@
-@placeholderWidth : 100px;
+img.avatar {
+  display: inline-block;
 
-.easy-collapse-wrapper {
+  --s: var(--size, 2em);
+
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  white-space: normal;
+  overflow: hidden;
+}
+
+img.avatar::before {
+  content: attr(alt);
   display: flex;
-  border : 1px solid rgba(0, 0, 0, .8);
-
-  .easy-collapse-content {
-    width     : 100%;
-    max-height: var(--max-height);
-    overflow  : hidden;
-    position  : relative;
-
-    &::before {
-      content: '';
-      width  : @placeholderWidth;
-      height : min(100%, calc(var(--max-height) - 1px));
-      float  : left;
-    }
-  }
-
-  .easy-collapse-btn {
-    width           : @placeholderWidth;
-    height          : 24px;
-    line-height     : 26px;
-    text-align      : center;
-    background-color: rgba(0, 0, 0, .1);
-    border-radius   : 6px 6px 0 0;
-    font-size       : 20px;
-    color           : rgba(0, 0, 0, .65);
-    transition      : 0.2s color;
-
-    float    : right;
-    position : relative;
-    left     : 50%;
-    transform: translateX(-50%);
-    bottom   : 24px;
-    cursor   : pointer;
-
-    &:hover {
-      color: #1677ff;
-    }
-  }
-
-  .easy-collapse-text {
-    box-sizing  : border-box;
-    width       : 100%;
-    float       : right;
-    margin      : 0;
-    margin-left : -@placeholderWidth;
-    mask        : linear-gradient(red calc(var(--max-height) - 50px), transparent var(--max-height));
-    -webkit-mask: linear-gradient(red calc(var(--max-height) - 50px), transparent var(--max-height));
-  }
-
-  .easy-collapse-content-check:checked+.easy-collapse-content {
-    max-height: fit-content;
-
-    &::before {
-      height: max(99.9%, calc(var(--max-height) - 1px));
-    }
-
-    .easy-collapse-btn {
-      transform    : scaleY(-1);
-      border-radius: 0 0 6px 6px;
-    }
-
-    .easy-collapse-text {
-      mask        : none;
-      -webkit-mask: none;
-    }
-  }
+  font-size: calc(var(--s) / 2);
+  width: 100%;
+  height: 100%;
+  background-color: bisque;
+  line-height: var(--s);
+  letter-spacing: var(--s);
+  text-indent: var(--s);
+  justify-content: center;
+  text-align: center;
+  color: inherit;
+  line-break: anywhere;
 }

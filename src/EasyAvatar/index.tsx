@@ -1,4 +1,23 @@
-import React, { type FC } from 'react';
+import React from 'react';
 import './style.less';
 
-export const EasyAvatar: FC<{ title: string }> = (props) => <h4>{props.title}</h4>;
+export type TEasyAvatarProps = {
+  nickname: string;
+  src: string;
+  width?: number;
+};
+
+export const EasyAvatar = (props: TEasyAvatarProps) => {
+  const { nickname, src, width = 50 } = props;
+  return (
+    <div
+      style={{
+        fontSize: width / 2,
+        width,
+        height: width,
+      }}
+    >
+      <img className="avatar" src={src} alt={nickname} style={{}} />
+    </div>
+  );
+};
